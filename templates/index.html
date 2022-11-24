@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Dropdown</title>
+    <link rel='stylesheet' href='/static/styles.css'>
+</head>
+<body>
+    <div class="login-box">
+        <h2>Stock Predictions </h2>
+            <form method="POST" action="{{ url_for('predict') }}">
+                <div class="user-box">
+                        <label>Movie Name</label>
+                        <select name="selected_names" method="GET" action="/">
+                            <option value="{{data_names[0]}}" selected>{{data_names[0]}}</option>
+                                {% for data in data_names[1:] %}
+                                    <option value="{{data}}">{{data}}</option>
+                                {% endfor %}
+                        </select>
+                </div>
+            <button type="submit" class="btn btn-default">Go</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
